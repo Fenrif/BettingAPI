@@ -17,7 +17,7 @@ namespace BettingAPI.Services.MatchOddsService
             _context = context;
         }
 
-        public async Task<ServiceResponse<List<GetMatchOddsDto>>> DeleteMatch(Guid id)
+        public async Task<ServiceResponse<List<GetMatchOddsDto>>> DeleteMatchOdd(Guid id)
         {
             var serviceResponse = new ServiceResponse<List<GetMatchOddsDto>>();
 

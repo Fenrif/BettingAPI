@@ -7,6 +7,5 @@ namespace BettingAPI.Dtos.MatchOdds
         public Guid MatchID { get; set; }
         public OddSpecifier Specifier { get; set; }
         public decimal Odd { get; set; }
-        public virtual Models.Match Match { get; set; } //Navigation property to Match
     }
 }

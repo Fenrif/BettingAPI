@@ -5,7 +5,7 @@ namespace BettingAPI.Services.MatchOddsService
 {
     public interface IMatchOddsService
     {
-        Task<ServiceResponse<List<GetMatchOddsDto>>> DeleteMatch(Guid id);
+        Task<ServiceResponse<List<GetMatchOddsDto>>> DeleteMatchOdd(Guid id);
         Task<ServiceResponse<List<GetMatchOddsDto>>> GetAllMatchOdds();
         Task<ServiceResponse<GetMatchOddsDto>> GetMatchOddById(Guid id);
         Task<ServiceResponse<List<GetMatchOddsDto>>> InsertMatchOdd(InsertMatchOddsDto newMatchOdd);
