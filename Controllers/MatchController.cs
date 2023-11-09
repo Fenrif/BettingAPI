@@ -16,6 +16,17 @@ namespace BettingAPI.Controllers
             _matchService = matchService;
         }
 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ServiceResponse<GetMatchDto>>> Delete(Guid id)
+        {
+            var response = await _matchService.DeleteMatch(id);
+            if (response.Data is null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetMatchDto>>>> GetAll()
         {
