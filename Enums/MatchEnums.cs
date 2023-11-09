@@ -10,6 +10,7 @@ namespace BettingAPI.Enums
         Basketball = 2
     }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum OddSpecifier
     {
         [Description("1")]
