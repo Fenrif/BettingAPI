@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using BettingAPI.Enums;
 
 namespace BettingAPI.Models
