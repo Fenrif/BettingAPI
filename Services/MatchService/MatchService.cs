@@ -43,12 +43,14 @@ namespace BettingAPI.Services.MatchService
             try
             {
                 var match = await _context.Match.FirstOrDefaultAsync(m => m.ID == id);
-                if (match is null) {
+                if (match is null)
+                {
                     throw new Exception($"Match with Id '{id}' not found.");
                 }
 
-                // _context.MatchOdds.Remove
+                //TODO: remove matchOdds
                 _context.Match.Remove(match);
+                await _context.SaveChangesAsync();
 
                 serviceResponse.Data = await _context.Match.Select(m => _mapper.Map<GetMatchDto>(m)).ToListAsync();
             }
@@ -73,7 +75,6 @@ namespace BettingAPI.Services.MatchService
         {
             var serviceResponse = new ServiceResponse<GetMatchDto>();
             var match = await _context.Match.FirstOrDefaultAsync(m => m.ID == id);
-            // var match = matches.FirstOrDefault(m => m.ID == id);
             serviceResponse.Data = _mapper.Map<GetMatchDto>(match);
             return serviceResponse;
         }
@@ -96,11 +97,14 @@ namespace BettingAPI.Services.MatchService
             {
                 var matches = await _context.Match.ToListAsync();
                 var match = matches.FirstOrDefault(m => m.ID == updatedMatch.ID);
-                if (match is null) {
+                if (match is null)
+                {
                     throw new Exception($"Match with Id '{updatedMatch.ID}' not found.");
                 }
 
                 _mapper.Map(updatedMatch, match);
+                await _context.SaveChangesAsync();
+
                 serviceResponse.Data = _mapper.Map<GetMatchDto>(match);
 
                 return serviceResponse;
