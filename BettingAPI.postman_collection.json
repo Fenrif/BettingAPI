@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "45766450-7ae1-419f-ab39-b746c3c56835",
+		"name": "BettingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30562957"
+	},
+	"item": [
+		{
+			"name": "Match",
+			"item": [
+				{
+					"name": "Get All Matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/match/GetAll",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"match",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"LOREM - IPSUM\",\r\n    \"matchDate\": \"2023-11-18T00:00:00\",\r\n    \"matchTime\": \"2023-11-10T17:00:00\",\r\n    \"teamA\": \"LOREM\",\r\n    \"teamB\": \"IPSUM\",\r\n    \"sport\": \"Basketball\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/api/match",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"match"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/match/36373B7A-D25C-4222-898F-5F9916E72F8E",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"match",
+								"36373B7A-D25C-4222-898F-5F9916E72F8E"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Match",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"36373B7A-D25C-4222-898F-5F9916E72F8E\",\r\n    \"description\": \"LOREM - IPSUM\",\r\n    \"matchDate\": \"2023-11-18T00:00:00\",\r\n    \"matchTime\": \"2023-11-10T17:00:00\",\r\n    \"teamA\": \"LOREM\",\r\n    \"teamB\": \"IPSUM\",\r\n    \"sport\": \"Football\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/api/match/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"match",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Match",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/match/36373B7A-D25C-4222-898F-5F9916E72F8E",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"match",
+								"36373B7A-D25C-4222-898F-5F9916E72F8E"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MatchOdds",
+			"item": [
+				{
+					"name": "Get All Match Odds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/matchOdds/GetAll",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"matchOdds",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Match Odd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"matchID\": \"d44da6c1-eb2a-4c12-972a-9af0f4832582\",\r\n  \"specifier\": 1,\r\n  \"odd\": 2.5\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/api/matchOdds",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"matchOdds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match Odd",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/matchOdds/36373B7A-D25C-4222-898F-5F9916E72F8E",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"matchOdds",
+								"36373B7A-D25C-4222-898F-5F9916E72F8E"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Match Odd",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f212fb32-204f-429a-962a-1c5f9ea4a4db\",\r\n    \"matchID\": \"9f901ef4-3878-4b20-8b0a-f3c4717b6524\",\r\n    \"specifier\": \"One\",\r\n    \"odd\": 13.50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7078/api/matchOdds/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"matchOdds",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Match Odd",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7078/api/matchOdds/36373B7A-D25C-4222-898F-5F9916E72F8E",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7078",
+							"path": [
+								"api",
+								"matchOdds",
+								"36373B7A-D25C-4222-898F-5F9916E72F8E"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
