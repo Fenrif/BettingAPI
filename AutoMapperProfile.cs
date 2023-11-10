@@ -9,17 +9,17 @@ namespace BettingAPI
     {
         public AutoMapperProfile()
         {
+            #region Match Mapping
             CreateMap<Match, GetMatchDto>();
             CreateMap<InsertMatchDto, Match>();
             CreateMap<UpdateMatchDto, Match>();
+            #endregion
 
-
-        //     CreateMap<UpdateMatchDto, Match>()
-        // .ForAllMembers(opt => opt.Condition((src, dest, srcMember) => srcMember != null)); // Ignore mapping if source is null
-
+            #region MatchOdds Mapping
             CreateMap<MatchOdds, GetMatchOddsDto>();
             CreateMap<InsertMatchOddsDto, MatchOdds>();
             CreateMap<UpdateMatchOddsDto, MatchOdds>();
+            #endregion
         }
     }
 }
