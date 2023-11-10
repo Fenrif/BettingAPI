@@ -8,25 +8,6 @@ namespace BettingAPI.Services.MatchService
 {
     public class MatchService : IMatchService
     {
-        // private static List<Match> matches = new()
-        // { new Match {
-        //     ID = Guid.NewGuid(),
-        //     TeamA = "Osfp",
-        //     TeamB = "Pao",
-        //     MatchDate = DateTime.Now.Date,
-        //     MatchTime = DateTime.Now,
-        //     Description = "Osfp - Pao",
-        //     Sport = Enums.Sport.Football},
-        //     new Match {
-        //     ID = Guid.NewGuid(),
-        //     TeamA = "Aek",
-        //     TeamB = "Aris",
-        //     MatchDate = DateTime.Now.Date,
-        //     MatchTime = DateTime.Now,
-        //     Description = "Aek - Aris",
-        //     Sport = Enums.Sport.Basketball}
-
-        // };
         private readonly IMapper _mapper;
         private readonly DataContext _context;
 
@@ -48,8 +29,7 @@ namespace BettingAPI.Services.MatchService
                     throw new Exception($"Match with Id '{id}' not found.");
                 }
 
-                //TODO: remove matchOdds
-                _context.Match.Remove(match);
+                _context.Match.Remove(match); //cascade delete
                 await _context.SaveChangesAsync();
 
                 serviceResponse.Data = await _context.Match.Select(m => _mapper.Map<GetMatchDto>(m)).ToListAsync();

@@ -11,7 +11,11 @@ namespace BettingAPI.Data
         }
 
         public DbSet<Match> Match {get; set;}
-        //=> Set<Match>();
         public DbSet<MatchOdds> MatchOdds {get; set;}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            DbInitializer.SeedData(modelBuilder);
+        }
     }
 }
