@@ -52,8 +52,8 @@ The .Net Core Web API project  revolves around two main entities ("Match" and "M
 
 4. **Run the Application with Docker**: Execute the following commands to build and run the web API using Docker:
     ```bash
-    docker build -t mywebapi .
-    docker run -p 8080:80 mywebapi
+    docker build -t bettingapi .
+    docker run -p 8080:80 bettingapi
     ```
 
 5. **Explore the API**: Access the API at `http://localhost:5012/api/` or `https://localhost:7078/api/`. Use tools like Postman or Swagger to make HTTP requests. I have include the file `BettingAPI.postman_collection.json` in the repository with HTTP requests for both entities. Those that require ID (Get (single), Update and Delete) will have to be sligtly altered, since I used Guid for all the Id's.
